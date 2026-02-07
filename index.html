@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eatezy - Order Smart. Pick Up Easy. Pay Fair.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* ===== CSS Reset & Base Styles ===== */
         * {
@@ -52,7 +54,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(5, 150, 105, 0.08) 0%, transparent 50%);
@@ -61,7 +63,10 @@
         }
 
         /* ===== Typography ===== */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-weight: 700;
             line-height: 1.2;
             color: var(--text-green-dark);
@@ -131,6 +136,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -233,6 +239,26 @@
             transform: translateX(-50%) scaleX(1);
         }
 
+        .nav-links a.nav-cta-browse {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+            color: var(--white) !important;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+            padding: 0.6rem 1.25rem;
+            border: none;
+        }
+
+        .nav-links a.nav-cta-browse::before {
+            display: none;
+        }
+
+        .nav-links a.nav-cta-browse:hover,
+        .nav-links a.nav-cta-browse.active {
+            background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+        }
+
         /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
@@ -313,6 +339,10 @@
 
             .nav-links.active li:nth-child(3) {
                 animation-delay: 0.3s;
+            }
+
+            .nav-links.active li:nth-child(4) {
+                animation-delay: 0.4s;
             }
 
             .nav-links a {
@@ -433,6 +463,158 @@
             color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-outline-light {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
+            color: var(--text-green-dark);
+            border: 2px solid var(--primary-green);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .btn-outline-light::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-outline-light:hover {
+            background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(16, 185, 129, 0.4), 0 0 24px rgba(16, 185, 129, 0.2);
+            border-color: var(--primary-green-light);
+        }
+
+        .btn-outline-light:hover::after {
+            left: 100%;
+        }
+
+        /* Browse App CTA Section */
+        .browse-app-cta {
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .browse-app-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.08) 50%, rgba(52, 211, 153, 0.1) 100%);
+            border-radius: 32px;
+            margin: 0 1rem;
+        }
+
+        .browse-app-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .browse-app-card {
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .browse-app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 72px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .browse-app-card .cta-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+        }
+
+        .browse-app-card h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            margin-bottom: 0.75rem;
+            color: var(--text-green-dark);
+        }
+
+        .browse-app-card p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 1.75rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .browse-app-card .btn-browse {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2.25rem;
+            font-size: 1.08rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(16, 185, 129, 0.4), 0 0 0 1px rgba(255,255,255,0.2) inset;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        .browse-app-card .btn-browse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .browse-app-card .btn-browse:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 14px 40px rgba(16, 185, 129, 0.5), 0 0 32px rgba(16, 185, 129, 0.25);
+            background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+        }
+
+        .browse-app-card .btn-browse:hover::before {
+            left: 100%;
+        }
+
+        .browse-app-card .btn-browse svg {
+            width: 22px;
+            height: 22px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .browse-app-card .btn-browse:hover svg {
+            transform: translateX(5px);
         }
 
         .hero-image {
@@ -886,6 +1068,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -896,6 +1079,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1054,6 +1238,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1065,6 +1250,7 @@
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -1124,6 +1310,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -1140,6 +1327,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#restaurants">For Restaurants</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#browse-app" class="nav-cta-browse">Browse the App</a></li>
             </ul>
         </nav>
     </header>
@@ -1152,10 +1340,14 @@
                     <h1>EATEZY</h1>
                     <p class="hero-tagline">Order Smart. Pick Up Easy. Pay Fair.</p>
                     <p class="hero-description">
-                        Eatezy lets customers order food online and pick it up directly from restaurants — no delivery fees, no commissions.
+                        Eatezy lets customers order food online and pick it up directly from restaurants — no delivery
+                        fees, no commissions.
                     </p>
                     <div class="cta-buttons">
-                        <a href="https://play.google.com/store/apps/details?id=com.eatezy.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download App</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.eatezy.app" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-primary">Download App</a>
+                        <a href="https://app.eatezy.com" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-light">Browse the App Now</a>
                         <a href="#restaurants" class="btn btn-secondary">For Restaurants</a>
                     </div>
                 </div>
@@ -1219,13 +1411,31 @@
         </div>
     </section>
 
+    <!-- Browse App CTA Section -->
+    <section class="browse-app-cta" id="browse-app">
+        <div class="container">
+            <div class="browse-app-card">
+                <span class="cta-badge">Try it in your browser</span>
+                <h2>Browse the app now</h2>
+                <p>Order from your favorite restaurants, pay online, and pick up fresh — no app install required.</p>
+                <a href="https://app.eatezy.com" target="_blank" rel="noopener noreferrer" class="btn-browse">
+                    Open Eatezy App
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- For Restaurants Section -->
     <section class="for-restaurants" id="restaurants">
         <div class="container">
             <div class="restaurants-content">
                 <div class="restaurants-text">
                     <h2>More Profit. More Control.</h2>
-                    <p>Join Eatezy and take back control of your restaurant's digital presence. No middlemen, no compromises.</p>
+                    <p>Join Eatezy and take back control of your restaurant's digital presence. No middlemen, no
+                        compromises.</p>
                     <ul class="benefits-list">
                         <li>100% revenue retention</li>
                         <li>Direct customer relationship</li>
@@ -1237,7 +1447,8 @@
                 <div class="restaurants-visual">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">🍴</div>
                     <h3>Grow Your Business</h3>
-                    <p>Join hundreds of restaurants already using Eatezy to increase profits and customer satisfaction.</p>
+                    <p>Join hundreds of restaurants already using Eatezy to increase profits and customer satisfaction.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1250,8 +1461,8 @@
                 <span class="eco-icon">🌱</span>
                 <h2>Eco-Friendly by <span>Design</span></h2>
                 <p>
-                    By choosing pickup over delivery, you're reducing carbon emissions and plastic waste. 
-                    Eatezy partners with restaurants committed to sustainable packaging, helping you make 
+                    By choosing pickup over delivery, you're reducing carbon emissions and plastic waste.
+                    Eatezy partners with restaurants committed to sustainable packaging, helping you make
                     a positive impact on the environment with every order.
                 </p>
             </div>
@@ -1294,26 +1505,26 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        Eatezy has transformed how we serve our customers. We keep 100% of our revenue 
+                        Eatezy has transformed how we serve our customers. We keep 100% of our revenue
                         and have direct relationships with our patrons. It's a game-changer.
                     </p>
-                    <div class="testimonial-author">Sarah Chen</div>
+                    <div class="testimonial-author">Ankit Verma</div>
                     <div class="testimonial-role">Owner, Green Leaf Bistro</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        I love that I can order ahead, pick up on my way home, and save on delivery fees. 
+                        I love that I can order ahead, pick up on my way home, and save on delivery fees.
                         The app is intuitive and the food is always fresh and ready.
                     </p>
-                    <div class="testimonial-author">Michael Rodriguez</div>
+                    <div class="testimonial-author">Sandeep Gupta</div>
                     <div class="testimonial-role">Eatezy Customer</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        As someone who cares about the environment, I appreciate Eatezy's commitment to 
+                        As someone who cares about the environment, I appreciate Eatezy's commitment to
                         reducing delivery pollution. Plus, the food tastes better when I pick it up fresh!
                     </p>
-                    <div class="testimonial-author">Emma Thompson</div>
+                    <div class="testimonial-author">Shubham Tiwari</div>
                     <div class="testimonial-role">Eatezy Customer</div>
                 </div>
             </div>
@@ -1339,6 +1550,7 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="#browse-app">Browse the App</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#restaurants">For Restaurants</a></li>
                         <li><a href="#about">About Us</a></li>
@@ -1369,7 +1581,7 @@
 
         function updateHeader() {
             const scrollY = window.scrollY;
-            
+
             // Add scrolled class when scrolling down
             if (scrollY > 50) {
                 header.classList.add('scrolled');
@@ -1383,7 +1595,7 @@
             } else {
                 header.classList.remove('hidden');
             }
-            
+
             lastScroll = scrollY;
             ticking = false;
         }
@@ -1471,7 +1683,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.feature-card, .step, .feature-item, .testimonial-card');
             animatedElements.forEach(el => observer.observe(el));
-            
+
             // Initial header state
             updateHeader();
         });
@@ -1484,7 +1696,7 @@
                 if (target) {
                     const headerHeight = header.offsetHeight;
                     const targetPosition = target.offsetTop - headerHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -1495,7 +1707,7 @@
 
         // Button hover effects
         document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
+            btn.addEventListener('mouseenter', function () {
                 this.style.transition = 'all 0.3s ease';
             });
         });
@@ -1516,14 +1728,14 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('partnerModal').addEventListener('click', function(e) {
+        document.getElementById('partnerModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closePartnerModal();
             }
         });
 
         // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('partnerModal');
                 if (modal.classList.contains('active')) {
@@ -1535,7 +1747,7 @@
         // Handle form submission
         function handlePartnerSubmit(event) {
             event.preventDefault();
-            
+
             const formData = {
                 name: document.getElementById('partnerName').value,
                 email: document.getElementById('partnerEmail').value,
@@ -1546,10 +1758,10 @@
             // Here you would typically send the data to a server
             // For now, we'll just show an alert and close the modal
             console.log('Partner Interest Form Submitted:', formData);
-            
+
             // Show success message
             alert('Thank you for your interest! We will contact you soon.');
-            
+
             // Close modal and reset form
             closePartnerModal();
         }
@@ -1577,7 +1789,8 @@
                 </div>
                 <div class="form-group">
                     <label for="partnerDescription">Description <span class="required">*</span></label>
-                    <textarea id="partnerDescription" name="description" required rows="5" placeholder="Tell us about your restaurant and why you'd like to partner with us"></textarea>
+                    <textarea id="partnerDescription" name="description" required rows="5"
+                        placeholder="Tell us about your restaurant and why you'd like to partner with us"></textarea>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closePartnerModal()">Cancel</button>
@@ -1587,4 +1800,5 @@
         </div>
     </div>
 </body>
+
 </html>
