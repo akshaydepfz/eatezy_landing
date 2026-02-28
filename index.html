@@ -345,6 +345,10 @@
                 animation-delay: 0.4s;
             }
 
+            .nav-links.active li:nth-child(5) {
+                animation-delay: 0.5s;
+            }
+
             .nav-links a {
                 width: 100%;
                 padding: 1rem 1.5rem;
@@ -961,6 +965,101 @@
             color: var(--text-light-gray);
         }
 
+        /* ===== FAQ Section ===== */
+        .faq {
+            background: transparent;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.12);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-green);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.15);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-green-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-green);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-green);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            transform: rotate(0deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer-inner p {
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner ul {
+            margin: 0.5rem 0 0 1.25rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
         /* ===== Footer ===== */
         footer {
             background: var(--glass-bg);
@@ -1325,6 +1424,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#restaurants">For Restaurants</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#browse-app" class="nav-cta-browse">Browse the App</a></li>
             </ul>
@@ -1531,6 +1631,122 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What is this app about?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>This app helps you order food online and pick it up directly from the restaurant. No delivery riders. No extra delivery charges. Just order, walk in, and grab your food.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is this a delivery app?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>No. We focus only on self-pickup orders. You place the order through the app and collect it from the restaurant when it's ready.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does pickup work?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>It's simple:</p>
+                            <ul>
+                                <li>Choose a restaurant</li>
+                                <li>Place your order</li>
+                                <li>Get notified when it's ready</li>
+                                <li>Walk in and collect your food</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I save money by ordering here?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes. There are no delivery charges or surge fees. You pay the restaurant's regular menu price.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I know when my order is ready?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You'll receive a notification in the app once the restaurant marks your order as ready for pickup.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What happens if I reach early?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>If you arrive early, the restaurant will prepare your order as quickly as possible. You can also check the estimated ready time inside the app.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I cancel my order?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Orders can only be cancelled before the restaurant starts preparing them. Once preparation begins, cancellation may not be possible.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if the restaurant delays my order?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>If there's a delay, the restaurant will update the ready time in the app. You can also contact the restaurant directly using the call option provided.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do payments work?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You can pay securely through the app. In some cases, restaurants may also allow pay-at-pickup options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Why should I use this instead of delivery apps?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <ul>
+                                <li>No delivery fees</li>
+                                <li>Faster than waiting for a rider</li>
+                                <li>Support local restaurants</li>
+                                <li>Better for short-distance orders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is there a minimum order amount?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Minimum order amounts may vary depending on the restaurant.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if I don't collect my order?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>If an order is not collected, it may not be eligible for refund. Please arrive at the restaurant within the pickup time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -1683,6 +1899,16 @@
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.feature-card, .step, .feature-item, .testimonial-card');
             animatedElements.forEach(el => observer.observe(el));
+
+            // FAQ accordion toggle
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.closest('.faq-item');
+                    const wasActive = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                    if (!wasActive) item.classList.add('active');
+                });
+            });
 
             // Initial header state
             updateHeader();
